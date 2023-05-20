@@ -305,14 +305,9 @@ button:hover {
   }
 }
 
-@media (max-width: 360px) {
-  body:after {
-    content: "loser you have a small phone";
-    /* flex: 1000; */
-    background-color: red;
-    height: 100vh;
-    width: 100vw;
-    inset: 0;
-    position: absolute;
+@media (max-width: 380px) {
+  .result h1,
+  .result span {
+    font-size: 2.5rem;
   }
 }
