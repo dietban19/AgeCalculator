@@ -1,0 +1,318 @@
+:root {
+  --clr-primary-400: hsl(259, 100%, 65%);
+  --clr-primary-500: hsl(0, 100%, 67%);
+
+  --clr-neutral-500: hsl(0, 0%, 100%);
+  --clr-neutral-600: hsl(0, 0%, 94%);
+  --clr-neutral-700: hsl(0, 0%, 86%);
+  --clr-neutral-800: hsl(0, 1%, 44%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+
+  --ff-primary: "Poppins", sans-serif;
+
+  --fw-400: 400;
+  --fw-700: 700;
+  --fw-800: 800;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  display: grid;
+  place-items: center;
+
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-800);
+  background-color: var(--clr-neutral-600);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.visuallyHidden {
+  position: absolute;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+main {
+  background-color: var(--clr-neutral-500);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90vw;
+  max-width: 45rem;
+  max-height: 590px;
+  background: white;
+  padding: 2rem;
+  border-radius: 2rem 2rem 10rem 2rem;
+}
+.form-header {
+  width: 100%;
+  position: relative;
+}
+.form-age-container {
+  height: 8rem;
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  max-width: 33rem;
+}
+input {
+  width: 100%;
+  max-height: 74px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid var(--clr-neutral-600);
+}
+
+input:focus {
+  outline: 2px solid var(--clr-primary-400);
+}
+
+.input-container {
+  font-size: 32px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.input-container span {
+  bottom: -12px;
+  left: 4px;
+  position: absolute;
+  height: 20px;
+  font-size: 13px;
+  display: block;
+}
+.input-container label {
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.submit-button {
+  /* position: absolute; */
+  margin-top: 3px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+}
+.submit-button:after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: var(--clr-neutral-700);
+  bottom: 15px;
+  position: absolute;
+}
+button {
+  z-index: 100;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-primary-400);
+  border: none;
+  border-radius: 50%;
+}
+button:focus,
+button:hover {
+  background-color: var(--clr-neutral-900);
+}
+
+.result-container {
+  padding: 1em;
+  flex: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.result {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+.result span {
+  color: var(--clr-primary-400);
+  font-size: 4rem;
+}
+.result h1 {
+  font-size: 4rem;
+  margin-left: 8px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: lowercase;
+}
+.error {
+  color: var(--clr-primary-500);
+}
+.error input {
+  border: 1px solid var(--clr-primary-500);
+}
+
+.err-info {
+  color: var(--clr-primary-500);
+  font-weight: var(--fw-400);
+  font-size: 12px;
+  font-style: italic;
+}
+.shake {
+  animation: shake 0.2s ease-out;
+}
+
+/* @media (max-width: 485px) {
+  .result-container span {
+    font-size: 3.5rem;
+  }
+  .result-container h1 {
+    font-size: 3.5rem;
+  }
+} */
+
+@media (max-width: 35em) {
+  main {
+    display: block;
+  }
+  .result-container {
+    flex: 0;
+    width: 100%;
+  }
+  .result h1,
+  .result span {
+    font-size: 2.8rem;
+  }
+  button {
+    width: 65px;
+    height: 65px;
+  }
+  .submit-button {
+    justify-content: center;
+  }
+  .submit-button::after {
+    bottom: 30px;
+  }
+  .form-age-container {
+    gap: 0.75rem;
+  }
+  .input-container {
+    font-size: 1rem;
+  }
+  input {
+    max-height: 55px;
+  }
+}
+
+@media (max-width: 360px) {
+  body:after {
+    content: "loser you have a small phone";
+    /* flex: 1000; */
+    background-color: red;
+    height: 100vh;
+    width: 100vw;
+    inset: 0;
+    position: absolute;
+  }
+}
